@@ -11,7 +11,7 @@ harden_sysctl_settings:
   "net.ipv6.conf.default.accept_redirects": 0     # IPv6 - Ignore ICMP redirects
   "net.ipv4.conf.all.secure_redirects": 1         # Ignore ICMP redirects from non-GW hosts
   "net.ipv4.conf.default.secure_redirects": 1     # Ignore ICMP redirects from non-GW hosts
-  "net.ipv4.ip_forward": 0                        # Don't allow traffic between networks or act as a router
+  "net.ipv4.ip_forward": 1                        # Allow traffic between networks or act as a router
   "net.ipv6.conf.all.forwarding": 0               # IPv6 - Don't allow traffic between networks or act as a router
   "net.ipv6.conf.default.forwarding": 0           # IPv6 - Don't allow traffic between networks or act as a router
   "net.ipv4.conf.all.send_redirects": 0           # Don't allow traffic between networks or act as a router
