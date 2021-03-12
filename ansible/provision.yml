@@ -12,3 +12,5 @@
       tags: fail2ban
     - role: ansible-role-docker
       tags: docker
+    - role: ansible-role-docker-compose
+      tags: docker-compose
