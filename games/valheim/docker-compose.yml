@@ -1,0 +1,29 @@
+version: "3"
+services:
+  valheim:
+    restart: unless-stopped
+    image: mbround18/valheim:latest
+    ports:
+      - 2456:2456/udp
+      - 2457:2457/udp
+      - 2458:2458/udp
+    environment:
+      PORT: 2456
+      NAME: ${VALHEIM_NAME}
+      WORLD: ${VALHEIM_WORLD}
+      PASSWORD: ${VALHEIM_PASSWORD}
+      TZ: ${VALHEIM_TZ}
+      PUBLIC: 1
+      AUTO_UPDATE: 1
+      AUTO_UPDATE_SCHEDULE: "0 1 * * *"
+      AUTO_BACKUP: 1
+      AUTO_BACKUP_SCHEDULE: "*/15 * * * *"
+      AUTO_BACKUP_REMOVE_OLD: 1
+      AUTO_BACKUP_DAYS_TO_LIVE: 7
+      AUTO_BACKUP_ON_UPDATE: 1
+      AUTO_BACKUP_ON_SHUTDOWN: 1
+      UPDATE_ON_STARTUP: 0
+    volumes:
+      - ./data/saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - ./data/server:/home/steam/valheim
+      - ./data/backups:/home/steam/backups

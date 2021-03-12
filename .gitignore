@@ -1,3 +1,5 @@
 *.retry
 ansible/group_vars/all/vars.yml
 inventory.yml
+games/**/data/**
+.env
