@@ -1,0 +1,10 @@
+all:
+  hosts:
+    1.2.3.4:
+    gameserver.example.com:
+      - rule: "allow" # SSH
+        to_port: "22"
+        protocol: "tcp"
+      - rule: "allow" # Some game port
+        to_port: "1234"
+        protocol: "tcp"
